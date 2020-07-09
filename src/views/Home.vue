@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
-    <div v-for="movie in movies">
+    <!-- <div v-for="movie in movies">
       <h3>{{ movie.title }}</h3>
       <button v-on:click=showMovie(movie)>More Info</button>
     </div>
@@ -12,9 +12,9 @@
         <p>Title: <input type="text" v-model="currentMovie.title"></p>
         <p>Year: <input type="text" v-model="currentMovie.year"></p>
         <p>Plot: <input type="text" v-model="currentMovie.plot"></p>
-        <p>Director: <input type="text" v-model="currentMovie.director"></p>
+        <p>Director: <input type="text" v-model="currentMovie.director"></p> -->
         <!-- <p>English: <input type="text" v-model="currentMovie.english"></p> -->
-        <button v-on:click="updateMovie(currentMovie)">Update</button>
+        <!-- <button v-on:click="updateMovie(currentMovie)">Update</button>
         <button v-on:click="destroyMovie(currentMovie)"> Delete</button>
         <button>Close</button>
       </form>
@@ -25,14 +25,14 @@
       <p>Title: <input type="text" v-model="newMovieTitle"></p>
       <p>Year: <input type="text" v-model="newMovieYear"></p>
       <p>Plot: <input type="text" v-model="newMoviePlot"></p>
-      <p>Director: <input type="text" v-model="newMovieDirector"></p>
+      <p>Director: <input type="text" v-model="newMovieDirector"></p> -->
       <!-- <p>English: <select v-model="selected">
         <option v-for="option in options" v-bind:value="option.value">
         {{ option.text }}
         </option>
       </select></p> -->
-      <button v-on:click="createMovie()">Add</button>
-    </div>
+      <!-- <button v-on:click="createMovie()">Add</button>
+    </div> -->
   </div>
 </template>
 
@@ -44,7 +44,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      message: "Movies Index",
+      message: "Welcome to the Movie App!",
       movies: [],
       newMovieTitle: "",
       newMovieYear: "",
