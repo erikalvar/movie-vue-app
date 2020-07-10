@@ -4,9 +4,15 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/movies">All Movies</router-link> |
       <router-link to="/movies/new">Add Movie</router-link> |
-      <router-link to="/signup">Signup</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/logout">Logout</router-link>
+      <span v-if="!isLoggedIn()">
+        <router-link to="/signup">Signup</router-link> |
+      </span>
+      <span v-if="!isLoggedIn()">
+        <router-link to="/login">Login</router-link> 
+      </span>
+      <span v-if="isLoggedIn()">
+        <router-link to="/logout">Logout</router-link>
+      </span>
     </div>
     <router-view/>
   </div>
@@ -34,3 +40,16 @@
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  data: function() {
+    return {};
+  },
+  methods: {
+    isLoggedIn: function() {
+      return localStorage.getItem("jwt");
+    }
+  }
+};
+</script>
