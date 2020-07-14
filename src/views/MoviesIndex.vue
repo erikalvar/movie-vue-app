@@ -22,9 +22,13 @@
     <div class="btmspace-50 center">
       <h3 class="btmspace-10">All Movies</h3>
       <p class="nospace">Click on the box for more info</p>
+      <p>Search by title: <input v-model="titleFilter"></p>
+      <div>
+        <button>Sort Alphabetically</button>
+      </div>
     </div>
     <ul class="nospace clear services">
-      <div v-for="movie in movies">
+      <div v-for="movie in orderBy(filterBy(movies, titleFilter, 'title'), 'title')">
 
         <li class="one_quarter first"><a href="#">
           <figure><img src="https://image.flaticon.com/icons/svg/54/54335.svg" alt="">
